@@ -26,8 +26,19 @@ The package uses the existing Codex integration. It has no MCP server, app
 binding, lifecycle hook, payment flow, or reviewer account. Its local desktop
 requirements are prominently stated in the listing.
 
+**Local-execution review comes before requesting public review.** OpenAI's
+[migration/submission guide](https://developers.openai.com/plugins/guides/submit-claude-plugin)
+asks developers to contact their OpenAI partner before submitting a plugin whose
+core value requires local execution or access to desktop applications. This
+applies to Session-Pets. Identity verification and a valid ZIP do not establish
+that this desktop-only workflow is eligible for public listing. If no partner
+contact is available, ask [OpenAI Support](https://help.openai.com/en/articles/6614161-how-can-i-contact-support)
+for the appropriate intake route; support contact alone is not approval.
+
 1. The authorized publisher completes individual or business verification in
-   [OpenAI organization settings](https://platform.openai.com/settings/organization/general).
+   [OpenAI organization settings](https://platform.openai.com/settings/organization/general),
+   and confirms that the status is approved, not merely that the verification
+   flow was completed. Resolve the local-execution review route above.
 2. Open [the plugin portal](https://platform.openai.com/plugins) with an eligible
    owner or Apps Management Write role. Upload the OpenAI plugin ZIP.
 3. Inspect the imported English/Korean listing, category, icons, public links,
@@ -42,7 +53,14 @@ requirements are prominently stated in the listing.
 
 Skills-only packages do not require MCP test cases or reviewer credentials.
 They still require package and policy review. Portal acceptance and eligibility
-of this local-desktop workflow remain unverified until submission.
+of this local-desktop workflow remain unconfirmed. Creating an upload draft
+does not satisfy the pre-submission contact requirement.
+
+Session-Pets does not require a separate OpenAI API credit purchase. Publisher
+verification and API billing are separate requirements to check against the
+actual account flow. If verification redirects to Billing, do not assume a
+credit purchase is a free verification step; confirm the displayed requirement
+before authorizing a charge.
 
 Reference: [OpenAI plugin submission](https://developers.openai.com/plugins/deploy/submission).
 
