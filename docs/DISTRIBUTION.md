@@ -2,17 +2,16 @@
 
 Session-Pets is free software by yback. The app, standalone skills, and Claude
 marketplace are publicly distributed through this repository. **Official
-OpenAI and Anthropic directory submission, approval, and publication have not
-been completed.** A GitHub release is not evidence of a directory listing.
+OpenAI and Anthropic directory publication is not yet confirmed.** A GitHub release is not evidence of a directory listing.
 
 ## Release contents
 
 | File | Purpose |
 | --- | --- |
-| `Session-Pets-v0.2.1-macos-arm64.zip` | Desktop app and local skill installer |
-| `Session-Pets-v0.2.1-claude-plugin.zip` | Self-contained Claude Code plugin with hooks |
-| `Session-Pets-v0.2.1-codex-skill.zip` | Standalone Codex skill |
-| `Session-Pets-v0.2.1-openai-plugin.zip` | OpenAI submission package with a skill and helper |
+| `Session-Pets-v0.2.2-macos-arm64.zip` | Desktop app and local skill installer |
+| `Session-Pets-v0.2.2-claude-plugin.zip` | Self-contained Claude Code plugin with hooks |
+| `Session-Pets-v0.2.2-codex-skill.zip` | Standalone Codex skill |
+| `Session-Pets-v0.2.2-openai-plugin.zip` | OpenAI submission package with a skill and helper |
 | `SHA256SUMS.txt` | SHA-256 checksums for the four archives |
 
 Both plugin ZIPs contain one top-level `session-pets/` directory. The OpenAI

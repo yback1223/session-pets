@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "session-pets",
-  "version": "0.2.1",
-  "description": "A floating desktop pet for the current local Codex session. Requires the separate Session Pets app on macOS Apple Silicon and Python 3.",
+  "version": "0.2.2",
+  "description": "Give each local Codex session its own desktop pet, keep multiple session pets on screen, and click any pet to return to its session. Requires the separate Session Pets app on macOS Apple Silicon and Python 3.",
   "author": { "name": "yback", "url": "https://github.com/yback1223" },
   "homepage": "https://github.com/yback1223/session-pets",
   "repository": "https://github.com/yback1223/session-pets",
@@ -12,8 +12,8 @@
     "com.openai": {
       "interface": {
         "displayName": "Session-Pets",
-        "shortDescription": "A pet for your coding session",
-        "longDescription": "Keep a small companion beside your local Codex session. Choose a mischievous gorilla, a tiger, or your own PNG or sprite. Drag the pet around your desktop, double-click to dance, and click to return to the original session. Controls appear on hover or keyboard focus.\n\nThe desktop app shows a persistent badge for supported structured questions and a green badge when it observes the end of a Codex turn. Ordinary work has no status badge. Completion means the observed turn ended, not that an entire project is finished. Automatic Codex subagent discovery and links between sessions are not supported.\n\nRequires macOS 13 or later on Apple Silicon, Python 3, the separately installed Session Pets desktop app, and a local Codex session with shell access. Installing this plugin alone does not install the app. A web or mobile chat cannot display a pet on your Mac. Use Session-Pets to summon, choose, hide, or check your pet. The command name stays the same in every language; interface text follows the host language, with English and Korean bundled and other languages translated by your existing assistant.\n\nFree, open-source software by yback under MIT. No Session-Pets account, API key, subscription, telemetry, or developer-operated server. The app reads linked local Codex session records and saves pet preferences on your Mac. Your existing host's account, model usage, and permissions still apply. The macOS app is not Developer ID signed or notarized.",
+        "shortDescription": "One pet per coding session",
+        "longDescription": "Give every local Codex session its own desktop pet. Keep pets from multiple sessions on your desktop at the same time; each stays linked to its own session. Choose a mischievous gorilla, a tiger, or your own PNG or sprite. Drag the pet around your desktop, double-click to dance, and click to return to the original session. Controls appear on hover or keyboard focus.\n\nThe desktop app shows a persistent badge for supported structured questions and a green badge when it observes the end of a Codex turn. Ordinary work has no status badge. Completion means the observed turn ended, not that an entire project is finished. Automatic Codex subagent discovery and links between sessions are not supported.\n\nRequires macOS 13 or later on Apple Silicon, Python 3, the separately installed Session Pets desktop app, and a local Codex session with shell access. Installing this plugin alone does not install the app. A web or mobile chat cannot display a pet on your Mac. Use Session-Pets to summon, choose, hide, or check your pet. The command name stays the same in every language; interface text follows the host language, with English and Korean bundled and other languages translated by your existing assistant.\n\nFree, open-source software by yback under MIT. No Session-Pets account, API key, subscription, telemetry, or developer-operated server. The app reads linked local Codex session records and saves pet preferences on your Mac. Your existing host's account, model usage, and permissions still apply. The macOS app is not Developer ID signed or notarized.",
         "category": "Developer Tools",
         "defaultPrompt": [
           "Show a Session-Pets companion for this local Codex session.",
@@ -28,12 +28,12 @@
         "composerIcon": "./assets/icon.png"
       },
       "publication": {
-        "release_notes": "First OpenAI-format plugin package for the existing Session-Pets desktop app. Includes the explicit-invocation Codex skill, local Python helper, English and Korean listing copy, and public support, privacy, and MIT usage terms. Desktop behavior is unchanged from 0.2.0.",
+        "release_notes": "Clarifies that each local coding session can have its own desktop pet, with multiple session pets on screen together and a click returning to the linked session. Updates English and Korean listing text and usage instructions. Runtime behavior and data handling are unchanged.",
         "countries": [],
         "translations": {
           "ko-KR": {
-            "subtitle": "코딩 세션 곁에 두는 데스크톱 펫",
-            "description": "로컬 Codex 세션마다 작은 펫을 붙여 보세요. 고릴라·호랑이 또는 직접 만든 PNG와 스프라이트를 고르고, 드래그로 옮기고, 더블클릭으로 춤추게 할 수 있습니다. 펫을 클릭하면 원래 세션으로 돌아갑니다. 조작 버튼은 호버나 키보드 초점이 있을 때 나타납니다.\n\n지원되는 구조화된 질문에는 답변 필요 배지, Codex 턴 종료가 확인되면 초록 완료 배지가 나타납니다. 일반 작업 중에는 배지를 계속 띄우지 않습니다. 완료는 관찰한 턴의 종료를 뜻하며 프로젝트 전체의 성공을 판정하지 않습니다. Codex 하위 에이전트 자동 탐지와 세션 간 자동 연결은 지원하지 않습니다.\n\nApple Silicon Mac, macOS 13 이상, Python 3, 별도로 설치한 Session Pets 앱과 셸 실행이 가능한 로컬 Codex 세션이 필요합니다. 플러그인만 설치하면 데스크톱 앱은 설치되지 않습니다. 웹·모바일 채팅만으로 Mac 화면에 펫을 띄울 수 없습니다. 소환·선택·숨기기·상태 확인에는 모든 언어에서 Session-Pets라는 이름을 사용합니다. UI는 호스트 언어를 따르며 한국어·영어 외 언어는 기존 AI 세션이 번역합니다.\n\nyback의 무료 MIT 오픈소스입니다. 별도 계정·API 키·구독·분석 서버가 없습니다. 연결된 로컬 Codex 실행 기록을 읽고 펫 설정을 Mac에 저장합니다. 기존 호스트의 계정·모델 사용량·권한은 적용됩니다. macOS 앱은 Developer ID 서명과 Apple 공증을 받지 않았습니다."
+            "subtitle": "코딩 세션마다 하나씩, 나만의 펫",
+            "description": "각 로컬 Codex 세션에 펫을 하나씩 붙여 보세요. 여러 세션의 펫을 바탕화면에 동시에 띄울 수 있고, 각 펫은 자기 세션에 연결되어 있습니다. 고릴라·호랑이 또는 직접 만든 PNG와 스프라이트를 고르고, 드래그로 옮기고, 더블클릭으로 춤추게 할 수 있습니다. 펫을 클릭하면 원래 세션으로 돌아갑니다. 조작 버튼은 호버나 키보드 초점이 있을 때 나타납니다.\n\n지원되는 구조화된 질문에는 답변 필요 배지, Codex 턴 종료가 확인되면 초록 완료 배지가 나타납니다. 일반 작업 중에는 배지를 계속 띄우지 않습니다. 완료는 관찰한 턴의 종료를 뜻하며 프로젝트 전체의 성공을 판정하지 않습니다. Codex 하위 에이전트 자동 탐지와 세션 간 자동 연결은 지원하지 않습니다.\n\nApple Silicon Mac, macOS 13 이상, Python 3, 별도로 설치한 Session Pets 앱과 셸 실행이 가능한 로컬 Codex 세션이 필요합니다. 플러그인만 설치하면 데스크톱 앱은 설치되지 않습니다. 웹·모바일 채팅만으로 Mac 화면에 펫을 띄울 수 없습니다. 소환·선택·숨기기·상태 확인에는 모든 언어에서 Session-Pets라는 이름을 사용합니다. UI는 호스트 언어를 따르며 한국어·영어 외 언어는 기존 AI 세션이 번역합니다.\n\nyback의 무료 MIT 오픈소스입니다. 별도 계정·API 키·구독·분석 서버가 없습니다. 연결된 로컬 Codex 실행 기록을 읽고 펫 설정을 Mac에 저장합니다. 기존 호스트의 계정·모델 사용량·권한은 적용됩니다. macOS 앱은 Developer ID 서명과 Apple 공증을 받지 않았습니다."
           }
         }
       }

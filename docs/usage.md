@@ -10,7 +10,7 @@ The release ZIP is for **macOS 13 or later on Apple Silicon**. Intel Macs, Windo
 python3 --version
 ```
 
-Download `Session-Pets-v0.2.1-macos-arm64.zip` from [Releases](https://github.com/yback1223/session-pets/releases/latest), unzip it, and double-click `Install Session Pets.command`.
+Download `Session-Pets-v0.2.2-macos-arm64.zip` from [Releases](https://github.com/yback1223/session-pets/releases/latest), unzip it, and double-click `Install Session Pets.command`.
 
 | Item | Location |
 |---|---|
@@ -23,7 +23,7 @@ The installer protects unrelated existing skills. It does not install Python, ch
 
 The app is not Developer ID signed or notarized. If macOS blocks an item you trust, attempt to open it once, then use **System Settings → Privacy & Security → Open Anyway**. See [Apple's instructions](https://support.apple.com/en-us/102445). There is no automatic updater; install newer releases manually.
 
-Open the app, then run `$Session-Pets` in Codex or `/Session-Pets` in Claude Code. A local host that can run the Python helper and supply the current session ID is required. The first call opens the transparent character picker. Use **← / →**, click the character or press **Enter** to select, and **Esc** to cancel. Later calls restore that session's chosen pet.
+Open the app, then run `$Session-Pets` in Codex or `/Session-Pets` in Claude Code. A local host that can run the Python helper and supply the current session ID is required. The first call opens the transparent character picker. Use **← / →**, click the character or press **Enter** to select, and **Esc** to cancel. Later calls restore that session's chosen pet. Run the command in each session you want to connect: each gets its own pet, and pets from multiple sessions can appear on screen together.
 
 Opening the app by itself shows a default-character picker. This changes the default for future selections; it does not attach a pet to an arbitrary session. Use the **🐾 menu bar icon** to change the default or quit.
 

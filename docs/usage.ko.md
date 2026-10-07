@@ -10,7 +10,7 @@
 python3 --version
 ```
 
-[Releases](https://github.com/yback1223/session-pets/releases/latest)에서 `Session-Pets-v0.2.1-macos-arm64.zip`을 받아 압축을 풀고 `Install Session Pets.command`를 더블클릭합니다.
+[Releases](https://github.com/yback1223/session-pets/releases/latest)에서 `Session-Pets-v0.2.2-macos-arm64.zip`을 받아 압축을 풀고 `Install Session Pets.command`를 더블클릭합니다.
 
 | 항목 | 위치 |
 |---|---|
@@ -23,7 +23,7 @@ python3 --version
 
 앱은 Developer ID 서명과 Apple 공증을 받지 않았습니다. macOS가 차단하면 신뢰하는 다운로드인지 확인하고 한 번 열기를 시도한 뒤 **시스템 설정 → 개인정보 보호 및 보안 → 확인 없이 열기**를 사용하세요. [Apple 공식 안내](https://support.apple.com/ko-kr/102445)를 참고하세요. 자동 업데이트는 없으며 새 버전은 직접 설치합니다.
 
-앱을 연 다음 Codex에서 `$Session-Pets`, Claude Code에서 `/Session-Pets`를 호출합니다. Python 도우미를 실행하고 현재 세션 ID를 전달할 수 있는 로컬 호스트가 필요합니다. 첫 호출에서는 투명 선택기가 열립니다. **← / →**로 넘기고, 캐릭터 클릭 또는 **Enter**로 선택하며, **Esc**로 취소합니다. 이후에는 해당 세션에서 고른 펫이 다시 나타납니다.
+앱을 연 다음 Codex에서 `$Session-Pets`, Claude Code에서 `/Session-Pets`를 호출합니다. Python 도우미를 실행하고 현재 세션 ID를 전달할 수 있는 로컬 호스트가 필요합니다. 첫 호출에서는 투명 선택기가 열립니다. **← / →**로 넘기고, 캐릭터 클릭 또는 **Enter**로 선택하며, **Esc**로 취소합니다. 이후에는 해당 세션에서 고른 펫이 다시 나타납니다. 연결할 세션마다 명령을 호출하면 세션별로 펫을 하나씩 둘 수 있고, 여러 세션의 펫이 화면에 함께 나타납니다.
 
 앱만 직접 열면 기본 캐릭터 선택기가 나옵니다. 이 선택은 다음 선택기의 기본값을 정하며, 임의의 세션에 펫을 연결하지 않습니다. 메뉴 막대의 **🐾 아이콘**에서 기본 캐릭터를 바꾸거나 앱을 종료할 수 있습니다.
 

@@ -1,7 +1,10 @@
 # Session-Pets for Codex
 
-Give your current local Codex session a floating gorilla, tiger, or custom pet.
-Click the pet to return to that session, drag it around, or double-click to dance.
+**One desktop pet for each Codex session.**
+
+Give every local Codex session its own floating gorilla, tiger, or custom pet.
+Keep pets from multiple sessions on your desktop at the same time. Click any pet
+to return to its session, drag it around, or double-click to dance.
 Supported questions stay visible until answered; a green badge marks an observed
 Codex turn ending. Ordinary work has no persistent status badge.
 
@@ -16,6 +19,9 @@ cross-session links are not supported.
 Install the desktop app, open it, then invoke **Session-Pets** from the intended
 Codex session. The desktop installer also provides the standalone `$Session-Pets`
 skill. Use one copy of the skill in a session to avoid duplicate suggestions.
+
+Invoke Session-Pets in each session you want to connect. Each session remembers
+its own pet choice, and the pets can stay on screen together.
 
 - **Session-Pets**: show the remembered pet, or open the character picker.
 - **Session-Pets choose**: browse characters or import a custom PNG/sprite.

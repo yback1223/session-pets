@@ -2,10 +2,13 @@
 
 ![Session-Pets gorilla and tiger](assets/icon.png)
 
-A small desktop companion for the session you are working in. Pick the gorilla
-or tiger, let it react to your cursor, and click it to return to the original chat.
-Question and approval alerts stay visible when your input is needed. Connected
-subagents can appear as smaller companions.
+**One desktop pet for each Claude Code session.**
+
+Give every local Claude Code session its own gorilla, tiger, or custom character.
+Keep pets from multiple sessions on your desktop at the same time. Click any pet
+to return to the session it belongs to. Question and approval alerts stay visible
+when that session needs your input. Connected subagents can appear as smaller
+companions.
 
 **Requires the [Session Pets desktop app](https://github.com/yback1223/session-pets/releases/latest),
 macOS Apple Silicon, Python 3, and Claude Code.** Installing this plugin alone does
@@ -34,6 +37,9 @@ that observe the current session; existing sessions do not gain past events.
 The desktop installer provides the short command **`/Session-Pets`**. This plugin
 also provides the fully qualified command **`/session-pets:Session-Pets`**.
 The name stays the same in every language.
+
+Run the command in each session you want to connect. Each session remembers its
+own pet choice, and the pets can stay on screen together.
 
 | Request | Result |
 | --- | --- |
@@ -74,8 +80,10 @@ with Anthropic or OpenAI. [Help and issues](https://github.com/yback1223/session
 
 ## 한국어
 
-현재 로컬 Claude Code 세션에 고릴라·호랑이 또는 직접 만든 펫을 붙입니다. 펫을
-클릭하면 원래 세션으로 돌아가며, 질문·승인 요청에는 알림이 나타납니다. Apple
+각 로컬 Claude Code 세션에 고릴라·호랑이 또는 직접 만든 펫을 하나씩 붙입니다.
+세션마다 명령을 호출하면 여러 세션의 펫을 화면에 동시에 띄울 수 있습니다.
+원하는 펫을 클릭하면 그 펫의 세션으로 돌아가며, 각 세션의 질문·승인 요청은
+해당 펫에 알림으로 표시됩니다. Apple
 Silicon Mac, macOS 13 이상, Python 3와 별도 Session Pets 앱 설치가 필요합니다.
 명령은 모든 언어에서 `/Session-Pets`이며, 플러그인 전체 이름은
 `/session-pets:Session-Pets`입니다. Claude의 응답 종료만으로 작업 완료를 확정하지

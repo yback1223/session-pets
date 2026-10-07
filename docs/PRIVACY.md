@@ -1,6 +1,6 @@
 # Local data and privacy
 
-Session-Pets is a local desktop companion. Version 0.2.1 has no developer-operated
+Session-Pets is a local desktop companion. Version 0.2.2 has no developer-operated
 server, account, analytics, or telemetry endpoint. It does not need an API key.
 Your Codex and Claude apps still have their own accounts, network connections,
 data handling, and usage charges.

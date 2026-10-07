@@ -4,9 +4,9 @@
 
 <img src="assets/session-pets-icon.png" alt="Session-Pets gorilla and tiger" width="128">
 
-**A transparent desktop pet for each Codex or Claude Code session.**
+**One desktop pet for each Codex or Claude Code session.**
 
-Give a session a gorilla, a tiger, or your own character. It stays on your desktop, shows when your answer is needed, and takes you back to the original session with a click. A green badge marks a confirmed Codex turn completion.
+Give each session its own gorilla, tiger, or custom character, and keep pets from multiple sessions on your desktop at the same time. Each pet stays linked to its own session: click it to return, or look for an alert when your input is needed. A green badge marks a confirmed Codex turn completion.
 
 **[Download for macOS · Apple Silicon](https://github.com/yback1223/session-pets/releases/latest)**
 
@@ -18,7 +18,7 @@ Requires macOS 13 or later on Apple Silicon. Free and independent, made by [ybac
 
 ## Install
 
-1. Download and unzip **`Session-Pets-v0.2.1-macos-arm64.zip`** from [Releases](https://github.com/yback1223/session-pets/releases/latest).
+1. Download and unzip **`Session-Pets-v0.2.2-macos-arm64.zip`** from [Releases](https://github.com/yback1223/session-pets/releases/latest).
 2. Double-click **`Install Session Pets.command`**. It installs the app in `~/Applications` and the local skills for Codex and Claude Code. **Python 3 is required**; Node.js is not required for the ZIP.
 3. Open **`Session Pets.app`**, then summon a pet from the session you want to connect:
 
@@ -27,7 +27,7 @@ Requires macOS 13 or later on Apple Silicon. Free and independent, made by [ybac
 | Codex | `$Session-Pets` | `$Session-Pets choose` | `$Session-Pets hide` |
 | Claude Code | `/Session-Pets` | `/Session-Pets choose` | `/Session-Pets hide` |
 
-On the first call, use the arrows to browse, then click the character or press **Enter**. Your choice is remembered for that session. Reload your host's skills or restart the host if the command does not appear.
+On the first call, use the arrows to browse, then click the character or press **Enter**. Your choice is remembered for that session. Repeat this in each session you want to keep on screen; their pets can appear together. Reload your host's skills or restart the host if the command does not appear.
 
 **macOS first launch:** the app is not Developer ID signed or notarized. If macOS blocks an item you trust, try opening it once, then go to **System Settings → Privacy & Security → Open Anyway** and confirm. Follow [Apple's instructions](https://support.apple.com/en-us/102445); the installer does not disable macOS security checks.
 
@@ -44,7 +44,7 @@ The plugin also provides `/session-pets:Session-Pets`. See the [Claude setup and
 
 ### Distribution status
 
-The app and plugin packages are available in [GitHub Releases](https://github.com/yback1223/session-pets/releases/latest). The commands above install from yback's public Claude marketplace. Official OpenAI and Anthropic directory listings are **not yet submitted or approved**. The release includes a separate OpenAI-format plugin ZIP for submission; see the [distribution guide](docs/DISTRIBUTION.md).
+The app and plugin packages are available in [GitHub Releases](https://github.com/yback1223/session-pets/releases/latest). The commands above install from yback's public Claude marketplace. Official OpenAI and Anthropic directory publication is **not yet confirmed**. The release includes a separate OpenAI-format plugin ZIP for submission; see the [distribution guide](docs/DISTRIBUTION.md).
 
 ## Using your pet
 

@@ -1,8 +1,8 @@
 {
   "name": "session-pets",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
-  "description": "Desktop companions for your Codex and Claude Code sessions.",
+  "description": "One desktop pet for each Codex or Claude Code session.",
   "main": "src/main.cjs",
   "scripts": {
     "start": "electron .",

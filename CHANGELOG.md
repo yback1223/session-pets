@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.2 — 2026-10-07
+
+Make the core feature explicit: one desktop pet for each coding session.
+
+- Lead the Claude and OpenAI plugin listings, marketplace description, and
+  English/Korean READMEs with the per-session pet relationship.
+- Explain how to summon pets in multiple sessions, keep them on screen together,
+  and click each pet to return to its own session.
+- Refresh versioned packages and download instructions for the revised listing.
+
+Runtime behavior, permissions, data handling, and platform support are unchanged.
+
 ## 0.2.1 — 2026-10-07
 
 Plugin distribution and directory submission preparation.
