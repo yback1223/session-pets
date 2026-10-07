@@ -2,6 +2,8 @@
 
 [한국어](README.ko.md) · [Usage guide](docs/usage.md)
 
+<img src="assets/session-pets-icon.png" alt="Session-Pets gorilla and tiger" width="128">
+
 **A transparent desktop pet for each Codex or Claude Code session.**
 
 Give a session a gorilla, a tiger, or your own character. It stays on your desktop, shows when your answer is needed, and takes you back to the original session with a click. A green badge marks a confirmed Codex turn completion.
@@ -16,7 +18,7 @@ Requires macOS 13 or later on Apple Silicon. Free and independent, made by [ybac
 
 ## Install
 
-1. Download and unzip **`Session-Pets-v0.2.0-macos-arm64.zip`** from [Releases](https://github.com/yback1223/session-pets/releases/latest).
+1. Download and unzip **`Session-Pets-v0.2.1-macos-arm64.zip`** from [Releases](https://github.com/yback1223/session-pets/releases/latest).
 2. Double-click **`Install Session Pets.command`**. It installs the app in `~/Applications` and the local skills for Codex and Claude Code. **Python 3 is required**; Node.js is not required for the ZIP.
 3. Open **`Session Pets.app`**, then summon a pet from the session you want to connect:
 
@@ -39,6 +41,10 @@ The local skill summons pets. Claude question, approval, and subagent events als
 ```
 
 The plugin also provides `/session-pets:Session-Pets`. See the [Claude setup and limits](docs/usage.md#claude-code-plugin) for local installation and session-opening details.
+
+### Distribution status
+
+The app and plugin packages are available in [GitHub Releases](https://github.com/yback1223/session-pets/releases/latest). The commands above install from yback's public Claude marketplace. Official OpenAI and Anthropic directory listings are **not yet submitted or approved**. The release includes a separate OpenAI-format plugin ZIP for submission; see the [distribution guide](docs/DISTRIBUTION.md).
 
 ## Using your pet
 
@@ -87,3 +93,5 @@ npm run install:integrations
 ## License
 
 [MIT](LICENSE) · Copyright 2026 yback. Built-in character artwork was generated for this project. Session-Pets is an independent project, not affiliated with or endorsed by OpenAI or Anthropic.
+
+[Support](docs/SUPPORT.md) · [Privacy](docs/PRIVACY.md) · [Terms](docs/TERMS.md)

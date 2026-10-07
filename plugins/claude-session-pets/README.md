@@ -1,5 +1,7 @@
 # Session-Pets for Claude Code
 
+![Session-Pets gorilla and tiger](assets/icon.png)
+
 A small desktop companion for the session you are working in. Pick the gorilla
 or tiger, let it react to your cursor, and click it to return to the original chat.
 Question and approval alerts stay visible when your input is needed. Connected
@@ -9,6 +11,11 @@ subagents can appear as smaller companions.
 macOS Apple Silicon, Python 3, and Claude Code.** Installing this plugin alone does
 not install the desktop app. It does not add a hosted AI service or require an
 additional API key.
+
+This is for **local Claude Code sessions on the same Mac as the desktop app**.
+A web/mobile chat cannot display a pet on your desktop. Cowork and cloud/remote
+execution are not supported targets for this release. The desktop app is not
+Developer ID signed or Apple notarized.
 
 ## Install
 
@@ -46,9 +53,30 @@ private local socket. It does not answer questions or approve tools. A Claude
 Stop event is treated as a reply observed, **not verified task completion**.
 Automatic subagent retirement has the same completion limitation.
 
+When Claude emits a supported event, it runs the bundled Python hook, which
+sends selected event fields through a user-only local Unix socket. If the app
+is absent, the hook exits quietly. An explicit Session-Pets invocation runs the
+bundled Python helper, which can open the already installed desktop app and
+asks it to show, choose, hide, or inspect a pet. Neither script downloads or
+installs software. Other than local app communication, there is no network
+service operated by the plugin. Your host's account, usage, and permissions
+still apply; the plugin does not send prompts or grant approvals.
+
 No session content is sent to the developer. The most recent assistant reply
 may be passed locally and retained in app memory; see the full
 [data-use guide](https://github.com/yback1223/session-pets/blob/main/docs/PRIVACY.md).
 
 Free, independent software by **yback**, under the MIT license. Not affiliated
 with Anthropic or OpenAI. [Help and issues](https://github.com/yback1223/session-pets/issues).
+
+[Support](https://github.com/yback1223/session-pets/blob/main/docs/SUPPORT.md)
+· [Terms](https://github.com/yback1223/session-pets/blob/main/docs/TERMS.md)
+
+## 한국어
+
+현재 로컬 Claude Code 세션에 고릴라·호랑이 또는 직접 만든 펫을 붙입니다. 펫을
+클릭하면 원래 세션으로 돌아가며, 질문·승인 요청에는 알림이 나타납니다. Apple
+Silicon Mac, macOS 13 이상, Python 3와 별도 Session Pets 앱 설치가 필요합니다.
+명령은 모든 언어에서 `/Session-Pets`이며, 플러그인 전체 이름은
+`/session-pets:Session-Pets`입니다. Claude의 응답 종료만으로 작업 완료를 확정하지
+않습니다. [한국어 설치 안내](https://github.com/yback1223/session-pets/blob/main/docs/usage.ko.md)를 참고하세요.

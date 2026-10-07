@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.1 — 2026-10-07
+
+Plugin distribution and directory submission preparation.
+
+- A self-contained OpenAI-format plugin ZIP, containing the Codex skill and
+  Python helper, with English and Korean listing text.
+- A shared transparent gorilla-and-tiger icon, Claude directory metadata, and
+  public support, privacy, and MIT terms pages.
+- Release packaging and CI check that copied skills, helpers, artwork, licenses,
+  and plugin versions match their canonical sources.
+- Explicit platform requirements and a maintainer submission guide. Official
+  directory listings still require portal submission, review, and publication.
+
+Desktop behavior and the support boundaries below are unchanged from 0.2.0.
+
 ## 0.2.0 — 2026-10-07
 
 First public release for macOS Apple Silicon.

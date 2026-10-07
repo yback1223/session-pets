@@ -10,7 +10,7 @@
 python3 --version
 ```
 
-[Releases](https://github.com/yback1223/session-pets/releases/latest)에서 `Session-Pets-v0.2.0-macos-arm64.zip`을 받아 압축을 풀고 `Install Session Pets.command`를 더블클릭합니다.
+[Releases](https://github.com/yback1223/session-pets/releases/latest)에서 `Session-Pets-v0.2.1-macos-arm64.zip`을 받아 압축을 풀고 `Install Session Pets.command`를 더블클릭합니다.
 
 | 항목 | 위치 |
 |---|---|

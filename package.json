@@ -1,6 +1,6 @@
 {
   "name": "session-pets",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "description": "Desktop companions for your Codex and Claude Code sessions.",
   "main": "src/main.cjs",
@@ -10,7 +10,9 @@
     "smoke": "electron . --smoke-test",
     "install:integrations": "python3 scripts/install-integrations.py",
     "pack": "node scripts/package.cjs",
-    "release:mac": "node scripts/release.cjs"
+    "release:mac": "node scripts/release.cjs",
+    "sync:plugins": "node scripts/sync-plugins.cjs",
+    "check:plugins": "node scripts/sync-plugins.cjs --check"
   },
   "devDependencies": {
     "@electron/packager": "19.0.3",

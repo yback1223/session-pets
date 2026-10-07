@@ -1,11 +1,7 @@
 'use strict';
 const path=require('node:path');
-const fs=require('node:fs');
 const {packager}=require('@electron/packager');
-// Keep the standalone Claude plugin self-contained with the canonical helper.
-const helperDir=path.resolve(__dirname,'../plugins/claude-session-pets/skills/Session-Pets/scripts');
-fs.mkdirSync(helperDir,{recursive:true});
-fs.copyFileSync(path.join(__dirname,'pet.py'),path.join(helperDir,'pet.py'));
+require('./sync-plugins.cjs').syncPlugins();
 const release=process.argv.includes('--release');
 const roots=['src','renderer','shared','assets','integrations','plugins','scripts','package.json','README.md','README.ko.md','LICENSE'];
 const excludedRoot=new RegExp('^/(?!(?:'+roots.map(name=>name.replaceAll('.','\\.')).join('|')+')(?:/|$)).+');

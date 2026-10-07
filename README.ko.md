@@ -2,6 +2,8 @@
 
 [English](README.md) · [사용 가이드](docs/usage.ko.md)
 
+<img src="assets/session-pets-icon.png" alt="Session-Pets 고릴라와 호랑이" width="128">
+
 **Codex·Claude Code 세션마다 곁에 두는 투명한 데스크톱 펫.**
 
 세션에 고릴라, 호랑이, 또는 직접 만든 캐릭터를 붙여 보세요. 바탕화면에 머물다가 답변이 필요하면 알려주고, 클릭하면 연결된 원래 세션으로 돌아갑니다. Codex 턴의 완료가 확인되면 초록 배지가 나타납니다.
@@ -16,7 +18,7 @@ Apple Silicon Mac과 macOS 13 이상이 필요합니다. [yback](https://github.
 
 ## 설치
 
-1. [Releases](https://github.com/yback1223/session-pets/releases/latest)에서 **`Session-Pets-v0.2.0-macos-arm64.zip`**을 내려받아 압축을 풉니다.
+1. [Releases](https://github.com/yback1223/session-pets/releases/latest)에서 **`Session-Pets-v0.2.1-macos-arm64.zip`**을 내려받아 압축을 풉니다.
 2. **`Install Session Pets.command`**를 더블클릭합니다. 앱은 `~/Applications`에, 소환 스킬은 Codex와 Claude Code의 사용자 스킬 폴더에 설치됩니다. **Python 3가 필요하며**, ZIP 사용에는 Node.js가 필요하지 않습니다.
 3. **`Session Pets.app`**을 연 다음, 연결할 세션에서 펫을 소환합니다.
 
@@ -39,6 +41,10 @@ Apple Silicon Mac과 macOS 13 이상이 필요합니다. [yback](https://github.
 ```
 
 플러그인에서는 `/session-pets:Session-Pets`도 사용할 수 있습니다. 로컬 설치와 세션 이동의 제한은 [Claude 설정 안내](docs/usage.ko.md#claude-code-플러그인)를 참고하세요.
+
+### 배포 상태
+
+앱과 플러그인 파일은 [GitHub Releases](https://github.com/yback1223/session-pets/releases/latest)에서 받을 수 있습니다. 위 명령은 yback의 공개 Claude 마켓플레이스에서 설치합니다. OpenAI·Anthropic 공식 디렉터리는 **아직 제출·승인되지 않았습니다**. 릴리스에는 제출용 OpenAI 형식 플러그인 ZIP도 포함되어 있습니다. [배포·제출 안내](docs/DISTRIBUTION.md)를 참고하세요.
 
 ## 펫 사용하기
 
@@ -87,3 +93,5 @@ npm run install:integrations
 ## 라이선스
 
 [MIT](LICENSE) · Copyright 2026 yback. 기본 캐릭터 이미지는 이 프로젝트를 위해 생성했습니다. Session-Pets는 OpenAI·Anthropic과 제휴하거나 해당 회사의 보증을 받는 프로젝트가 아닙니다.
+
+[지원](docs/SUPPORT.md) · [개인정보](docs/PRIVACY.md) · [이용 조건](docs/TERMS.md)

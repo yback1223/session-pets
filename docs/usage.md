@@ -10,7 +10,7 @@ The release ZIP is for **macOS 13 or later on Apple Silicon**. Intel Macs, Windo
 python3 --version
 ```
 
-Download `Session-Pets-v0.2.0-macos-arm64.zip` from [Releases](https://github.com/yback1223/session-pets/releases/latest), unzip it, and double-click `Install Session Pets.command`.
+Download `Session-Pets-v0.2.1-macos-arm64.zip` from [Releases](https://github.com/yback1223/session-pets/releases/latest), unzip it, and double-click `Install Session Pets.command`.
 
 | Item | Location |
 |---|---|

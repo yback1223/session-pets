@@ -1,0 +1,5 @@
+interface:
+  display_name: "Session-Pets"
+  short_description: "Choose a desktop companion for this session"
+policy:
+  allow_implicit_invocation: false

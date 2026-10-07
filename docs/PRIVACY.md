@@ -1,6 +1,6 @@
 # Local data and privacy
 
-Session-Pets is a local desktop companion. Version 0.2.0 has no developer-operated
+Session-Pets is a local desktop companion. Version 0.2.1 has no developer-operated
 server, account, analytics, or telemetry endpoint. It does not need an API key.
 Your Codex and Claude apps still have their own accounts, network connections,
 data handling, and usage charges.
@@ -48,6 +48,9 @@ Installed skills live in `~/.agents/skills/Session-Pets/` and
 app path. The installer also leaves a private `.session-pets-install.lock` in
 your home folder to coordinate updates. Claude manages its own plugin cache and
 registration when you install the marketplace plugin.
+Plugin-manager installations use that host's plugin storage rather than these
+standalone skill folders. The OpenAI-format package includes the same local
+Codex helper and does not add an external connection.
 
 English and Korean UI strings are bundled. For another language, the invoked
 skill asks your existing assistant to translate the product's UI strings and
