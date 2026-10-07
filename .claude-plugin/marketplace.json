@@ -1,0 +1,12 @@
+{
+  "name": "session-pets",
+  "owner": { "name": "yback", "url": "https://github.com/yback1223" },
+  "metadata": { "description": "Desktop companions for Codex and Claude Code sessions." },
+  "plugins": [
+    {
+      "name": "session-pets",
+      "source": "./plugins/claude-session-pets",
+      "description": "A floating pet for your Claude Code session, with question alerts and subagent companions. Requires the Session Pets macOS app."
+    }
+  ]
+}

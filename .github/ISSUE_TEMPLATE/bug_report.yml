@@ -1,0 +1,17 @@
+name: Bug report
+description: Report something that did not behave as expected.
+body:
+  - type: input
+    id: environment
+    attributes:
+      label: Version and environment
+      description: Session Pets version, macOS version, chip, and Codex/Claude version.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What happened?
+      description: Include steps, expected behavior, and actual behavior. Remove private conversations and credentials from screenshots or logs.
+    validations:
+      required: true

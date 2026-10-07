@@ -1,0 +1,51 @@
+'use strict';
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const net = require('node:net');
+const fs = require('node:fs/promises');
+const os = require('node:os');
+const path = require('node:path');
+const { execFile } = require('node:child_process');
+const { promisify } = require('node:util');
+const { createControlServer, validateRequest } = require('../src/control.cjs');
+const exec = promisify(execFile);
+const sid = '11111111-1111-4111-8111-111111111111';
+const base = { version: 1, provider: 'codex', sessionId: sid, action: 'summon' };
+test('control accepts only scoped provider UUID actions, never a latest-session fallback', () => {
+  assert.equal(validateRequest(base).sessionId, sid);
+  for (const patch of [{ sessionId: '' }, { sessionId: 'latest' }, { provider: 'demo' }, { action: 'send-message' }, { version: 2 }, { title: 'bad\nname' }, { petId: {} }, { cwd: 'relative' }, { cwd: '/tmp\nwrong' }, { surface: 'other' }]) assert.throws(() => validateRequest({ ...base, ...patch }));
+});
+test('Python helper uses exact Codex context and requires an explicit Claude session', async t => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'pet-c-'));
+  const requests = [];
+  const server = createControlServer({ dataDir: dir, onRequest: request => { requests.push(request); return { status: 'choosing', sessionId: request.provider + ':' + request.sessionId }; } });
+  t.after(async () => { await server.stop(); await fs.rm(dir, { recursive: true, force: true }); });
+  await server.start(); assert.equal((await fs.stat(server.socketPath)).mode & 0o777, 0o600);
+  const args = [path.resolve('scripts/pet.py'), '--socket', server.socketPath, '--no-launch'];
+  const env = { ...process.env, CODEX_THREAD_ID: sid, CODEX_SESSION_ID: '22222222-2222-4222-8222-222222222222', CLAUDE_CODE_ENTRYPOINT: 'cli' };
+  const result = await exec('python3', [...args, '--provider', 'codex', 'choose'], { env });
+  assert.equal(JSON.parse(result.stdout).status, 'choosing'); assert.equal(requests[0].sessionId, sid);
+  await assert.rejects(exec('python3', [...args, '--provider', 'claude'], { env }));
+  await exec('python3', [...args, '--provider', 'claude', '--session', sid, '--pet', '고릴라'], { env });
+  assert.equal(requests[1].provider, 'claude'); assert.equal(requests[1].petId, '고릴라'); assert.equal(requests[1].cwd, process.cwd()); assert.equal(requests[1].surface, 'cli');
+  await exec('python3', [...args, '--provider', 'claude', '--session', sid], { env: { ...env, CLAUDE_CODE_ENTRYPOINT: 'claude-desktop' } });
+  assert.equal(requests[2].surface, 'desktop'); assert.equal(requests.length, 3);
+});
+test('socket bounds requests and refuses a second server without stealing its socket', async t => {
+  const dir = await fs.mkdtemp(path.join(os.tmpdir(), 'pet-c-'));
+  let calls = 0;
+  const one = createControlServer({ dataDir: dir, onRequest: () => { calls++; return {}; } });
+  const two = createControlServer({ dataDir: dir, onRequest: () => ({}) });
+  t.after(async () => { await two.stop(); await one.stop(); await fs.rm(dir, { recursive: true, force: true }); });
+  await one.start(); await assert.rejects(two.start()); await two.stop();
+  assert.equal((await fs.stat(one.socketPath)).isSocket(), true);
+  const exchange = data => new Promise((resolve, reject) => {
+    const socket = net.createConnection(one.socketPath); let output = '';
+    socket.on('connect', () => socket.write(data)); socket.on('data', chunk => { output += chunk; });
+    socket.on('end', () => resolve(JSON.parse(output))); socket.on('error', reject);
+  });
+  assert.equal((await exchange('x'.repeat(17000))).ok, false);
+  assert.equal((await exchange(JSON.stringify({ ...base, action: 'send-message' }) + '\n')).ok, false);
+  assert.equal(calls, 0);
+  assert.equal((await exchange(JSON.stringify(base) + '\n')).ok, true); assert.equal(calls, 1);
+});

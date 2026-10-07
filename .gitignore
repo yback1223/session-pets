@@ -1,0 +1,15 @@
+node_modules/
+dist/
+release/
+work/
+design/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+runtime.json
+*.log
+*.pem
+*.p12
+*.mobileprovision

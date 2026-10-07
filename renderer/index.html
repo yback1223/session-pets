@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' file: data:; font-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+    <meta name="color-scheme" content="light">
+    <title data-i18n="열두 일꾼">열두 일꾼</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./picker.css">
+    <link rel="stylesheet" href="./reactions.css">
+    <script src="../shared/i18n.js" defer></script>
+    <script src="./moods.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+
+    <template id="picker-template">
+      <main class="pet-picker" aria-label="일꾼 고르기" data-i18n-aria-label="일꾼 고르기">
+        <header class="picker-header"><span id="picker-session" class="picker-session" data-i18n="기본 일꾼 고르기">기본 일꾼 고르기</span><button id="picker-close" class="picker-close" aria-label="선택 취소" data-i18n-aria-label="선택 취소">×</button></header>
+        <div class="picker-stage">
+          <button id="picker-previous" class="picker-arrow" aria-label="이전 일꾼" data-i18n-aria-label="이전 일꾼"><svg viewBox="0 0 24 40" aria-hidden="true"><path d="m18 5-12 15 12 15"/></svg></button>
+          <button id="picker-choose" class="picker-choice" aria-label="이 일꾼 선택" data-i18n-aria-label="이 일꾼 선택" aria-describedby="picker-name picker-hint"><span id="picker-sprite" class="sprite picker-sprite" aria-hidden="true"></span></button>
+          <button id="picker-next" class="picker-arrow" aria-label="다음 일꾼" data-i18n-aria-label="다음 일꾼"><svg viewBox="0 0 24 40" aria-hidden="true"><path d="m6 5 12 15-12 15"/></svg></button>
+        </div>
+        <div class="picker-caption" aria-live="polite" aria-atomic="true"><h1 id="picker-name" data-i18n="불러오는 중">불러오는 중</h1><span id="picker-position"></span></div>
+        <p class="picker-hint" id="picker-hint" data-i18n="클릭 또는 Enter로 선택">클릭 또는 Enter로 선택</p>
+        <div class="emotion-previews" aria-label="표정과 동작 미리보기" data-i18n-aria-label="표정과 동작 미리보기"><button data-emotion="dance" data-i18n="♪ 춤">♪ 춤</button><button data-emotion="laugh" data-i18n="웃음">웃음</button><button data-emotion="angry" data-i18n="버럭">버럭</button><button data-emotion="threat" data-i18n="으르렁">으르렁</button></div>
+        <footer class="picker-footer"><button id="picker-import" class="picker-import" data-i18n="＋ 내 펫 추가">＋ 내 펫 추가</button><span class="picker-key-hint" data-i18n="← → 이동 · Esc 취소">← → 이동 · Esc 취소</span></footer>
+      </main>
+    </template>
+
+    <template id="pet-template">
+      <main class="floating-pet">
+        <div id="pet-completion" class="pet-completion" role="status" aria-live="polite" aria-atomic="true" hidden>
+          <button id="pet-completion-open" class="status-open" type="button">
+            <svg class="completion-check" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="m6.5 12 3.5 3.5 7.5-7.5"/></svg>
+            <span id="pet-completion-label"></span>
+            <svg class="completion-arrow" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5"/></svg>
+          </button>
+        </div>
+        <button id="pet-attention" class="pet-attention" hidden aria-describedby="pet-attention-label">
+          <span class="attention-mark" aria-hidden="true">?</span>
+          <span class="attention-copy"><strong id="pet-attention-label" role="status" aria-live="polite"></strong><span id="pet-attention-hint"></span></span>
+        </button>
+        <div class="pet-tools"><button id="pet-library" class="mini-button" aria-label="펫 바꾸기" data-i18n-aria-label="펫 바꾸기">‹›</button><button id="pet-close" class="mini-button" aria-label="이 일꾼 숨기기" data-i18n-aria-label="이 일꾼 숨기기">×</button></div><button id="pet-handle" class="pet-handle" aria-label="일꾼을 끌어서 이동하거나 클릭해서 원래 세션 열기" data-i18n-aria-label="일꾼을 끌어서 이동하거나 클릭해서 원래 세션 열기"><div class="gaze"><div id="floating-sprite" class="sprite floating-sprite" aria-hidden="true"></div></div><span id="pet-reaction" class="pet-reaction" aria-live="off" hidden></span><span id="pet-sparks" class="pet-sparks" aria-hidden="true"></span><span class="pet-shadow" aria-hidden="true"></span><span id="child-label" class="child-label" hidden data-i18n="작은 일꾼">작은 일꾼</span></button><div class="floating-caption"><strong id="floating-name" data-i18n="일꾼">일꾼</strong><span id="floating-state" class="pet-state" data-i18n="상태 확인 중">상태 확인 중</span></div><p id="floating-title" class="floating-title"></p></main>
+    </template>
+
+  </body>
+</html>

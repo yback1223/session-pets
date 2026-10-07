@@ -1,0 +1,10 @@
+{
+  "name": "session-pets",
+  "version": "0.2.0",
+  "description": "A floating pet for your Claude Code session. Get question and approval alerts, see subagent companions, and click back to the original chat. Requires the Session Pets app for macOS Apple Silicon.",
+  "author": { "name": "yback", "url": "https://github.com/yback1223" },
+  "homepage": "https://github.com/yback1223/session-pets",
+  "repository": "https://github.com/yback1223/session-pets",
+  "license": "MIT",
+  "keywords": ["desktop-pet", "claude-code", "codex", "macos", "productivity"]
+}
